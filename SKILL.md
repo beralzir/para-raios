@@ -1,18 +1,17 @@
 ---
 name: para-raios
 description: >-
-  MANUAL-ONLY skill — NÃO auto-invocar sob nenhuma circunstância. Gera um plano de risco e segurança
-  de IA para um projeto/produto do Bera: mapeia o sistema (incl. agentes e pipelines autônomos),
-  preenche um checklist NIST Cybersecurity Framework (Identificar/Proteger/Detectar/Responder/
-  Recuperar), cruza com biblioteca de ameaças (OWASP Top 10 for LLM/Agentic, MITRE ATLAS, Google
-  SAIF), faz checagem de transparência do EU AI Act, e entrega tabela + memo à liderança +
-  recomendações priorizadas — escalado ao tamanho do projeto (solo → equipe → enterprise). Acionar
-  EXCLUSIVAMENTE quando o Bera pedir de forma explícita e nominal — via `/para-raios` ou frase como
-  "usa o para-raios", "chama o para-raios", "manda o para-raios fazer o plano de risco", "joga o
-  para-raios nesse projeto". Pedidos genéricos sobre risco, segurança, NIST, OWASP, ameaças de IA,
-  cibersegurança ou "analisa a segurança do meu projeto" NÃO são gatilhos válidos para esta skill;
-  nesses casos, responder normalmente sem invocá-la (no máximo, sugerir em texto que o Bera pode
-  chamá-la). Em dúvida, NÃO invoque.
+  MANUAL-ONLY skill: NÃO auto-invocar. Gera um plano de risco e segurança de IA para um
+  projeto/produto do Bera: mapeia o sistema (incl. agentes e pipelines autônomos), preenche um
+  checklist NIST Cybersecurity Framework, cruza com biblioteca de ameaças (OWASP Top 10 for
+  LLM/Agentic, MITRE ATLAS, Google SAIF), faz checagem de transparência do EU AI Act, e entrega
+  tabela + memo à liderança + recomendações priorizadas, escalado ao tamanho do projeto (solo →
+  equipe → enterprise). Acionar EXCLUSIVAMENTE quando o Bera pedir de forma explícita e nominal, via
+  `/para-raios` ou frase como "usa o para-raios", "chama o para-raios", "manda o para-raios fazer o
+  plano de risco", "joga o para-raios nesse projeto". Pedidos genéricos sobre risco, segurança,
+  NIST, OWASP, ameaças de IA, cibersegurança ou "analisa a segurança do meu projeto" NÃO são
+  gatilhos válidos para esta skill; nesses casos, responder normalmente sem invocá-la (no máximo,
+  sugerir em texto que o Bera pode chamá-la). Em dúvida, NÃO invoque.
 ---
 
 # para-raios — plano de risco & segurança de IA
