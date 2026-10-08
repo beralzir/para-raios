@@ -15,13 +15,15 @@ Quando acionada sobre um projeto/produto, ela:
 - **Faz checagem de transparência (EU AI Act lite)** — rotulagem de saída de IA (Art. 50), práticas proibidas (Art. 5), alto risco (Anexo III).
 - **Entrega** — mapa → tabela NIST CSF → ameaças aplicáveis → transparência → recomendações priorizadas (quick wins vs estruturais) → memo à liderança → disclosure de uso de IA. Markdown sempre; PDF/Word sob demanda.
 
+**Modo injeção** (`/para-raios injeção`): audita um projeto contra prompt injection pela Rule of Two, confere quatro camadas (regra escrita, aviso do runtime, portão de ação e memória, teste), roda uma bateria de injeção plantada com canário (`scripts/injecao_plantada.py`) e conduz a refatoração, uma mudança por vez com aprovação. Só em projeto próprio, com payload inofensivo. Fonte única: `references/prompt-injection.md`.
+
 Princípio central: **não inventar**. Toda observação se ancora em fato real; o que é desconhecido vira "Não tenho certeza" com o que faltou checar. Um plano todo verde não serve a ninguém — o valor está nos gaps reais.
 
 ## Como invocar (depois de instalada)
 
 Esta é uma skill **manual-only**: ela **nunca** auto-invoca. Aciona-se apenas de forma explícita e nominal:
 
-- **Slash command:** `/para-raios [seu projeto/pedido]`
+- **Slash command:** `/para-raios [seu projeto/pedido]` ou `/para-raios injeção [projeto]`
 - **Frase de invocação:** "usa o para-raios", "chama o para-raios", "manda o para-raios fazer o plano de risco", "joga o para-raios nesse projeto".
 
 Pedidos genéricos sobre risco, segurança, NIST, OWASP ou "analisa a segurança do meu projeto" **não** acionam a skill — por design.
@@ -43,6 +45,9 @@ Para uma instalação por projeto, use `.claude/skills/para-raios` dentro do rep
 - `references/nist-csf-checklist.md` — perguntas NIST CSF (base + agênticas) e como respondê-las.
 - `references/threat-library.md` — OWASP / MITRE ATLAS / SAIF: ameaças aplicáveis + mitigações.
 - `references/frameworks.md` — os frameworks (o que é, quando usar, fontes).
+- `references/prompt-injection.md`: modo injeção: premissa, Rule of Two, camadas, bateria plantada, refatoração.
+- `scripts/injecao_plantada.py`: bateria de injeção plantada (só stdlib).
+- `assets/hook-p13.py`: hook do aviso de origem externa.
 - `assets/template-plano.md` — template do entregável.
 - `assets/print-template.html` — esqueleto de print-CSS + comando de PDF.
 

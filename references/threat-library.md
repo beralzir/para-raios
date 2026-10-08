@@ -9,7 +9,7 @@ Aplica-se a qualquer app que use LLM (chatbot, RAG, geração de conteúdo).
 
 | ID | Ameaça | Aplica quando… | Mitigação |
 |---|---|---|---|
-| LLM01 | Prompt Injection | há input de usuário ou conteúdo externo no prompt | sanitizar/segregar input; instruções de sistema robustas; não confiar em conteúdo recuperado |
+| LLM01 | Prompt Injection | há input de usuário ou conteúdo externo no prompt | não há prevenção infalível (OWASP). Limitar o que o agente faz depois de ler: privilégio mínimo, aprovação humana para ação de risco, conteúdo externo segregado e marcado, teste adversarial. Instrução de sistema ajuda e não basta. Detalhe e teste: `prompt-injection.md` |
 | LLM02 | Sensitive Information Disclosure | o modelo vê dados sensíveis/PII | minimizar dados no contexto; filtrar saída; mascarar secrets |
 | LLM03 | Supply Chain | usa modelos/plugins/datasets de terceiros | fixar e verificar versões; proveniência; revisar dependências |
 | LLM04 | Data & Model Poisoning | há fine-tuning ou RAG com fontes abertas | validar fontes; curar dados; detectar anomalias |
@@ -21,16 +21,17 @@ Aplica-se a qualquer app que use LLM (chatbot, RAG, geração de conteúdo).
 | LLM10 | Unbounded Consumption | API de IA exposta a uso aberto | rate limit; budget/quota; timeouts |
 
 ## OWASP Top 10 for Agentic Applications 2026 (ASI)
-Aplica-se a agentes autônomos / multi-agente. *(Nomes podem variar entre press release e PDF oficial.)*
+Aplica-se a agentes autônomos / multi-agente. Nomes de ASI01 e ASI06 conferidos no anúncio oficial
+de 09/12/2025 em 08/10/2026. Os demais seguem a pesquisa de 27/jun.
 
 | ID | Ameaça | Aplica quando… | Mitigação |
 |---|---|---|---|
-| ASI01 | Agent Goal/Behavior Hijacking | o agente persegue objetivos a partir de input | validar objetivos; guardrails; confirmação humana |
+| ASI01 | Agent Goal Hijack | o agente persegue objetivos a partir de input | conteúdo externo como dado; ferramentas com escopo; confirmação humana em ação de risco. Ver `prompt-injection.md` |
 | ASI02 | Tool Misuse | o agente usa ferramentas/APIs | least-privilege; allowlist de tools; sandbox |
 | ASI03 | Identity & Privilege Abuse | o agente tem credenciais próprias | escopo mínimo; rotação; separar identidade do agente |
 | ASI04 | Agentic Supply Chain | usa tools/plugins/modelos de terceiros | proveniência; verificação; pinning |
 | ASI05 | Unexpected Code Execution (RCE) | o agente executa código | sandbox; sem exec arbitrário; isolar |
-| ASI06 | Memory & Context Poisoning | o agente tem memória persistente | validar o que entra na memória; isolar contexto por sessão |
+| ASI06 | Memory & Context Poisoning | o agente tem memória persistente | nada de fora entra na memória sem confirmação do dono; gravar com origem; isolar contexto por sessão. Ver `prompt-injection.md` |
 | ASI07 | Insecure Inter-Agent Communication | há múltiplos agentes | autenticar/assinar mensagens; canal seguro |
 | ASI08 | Cascading Failures | cadeia/orquestração de agentes | circuit breakers; limites; observabilidade |
 | ASI09 | Human-Agent Trust Exploitation | usuários confiam no agente | transparência; rotular como IA; limites claros |

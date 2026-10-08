@@ -45,7 +45,9 @@ Acrescente as que se aplicam; mapeiam para ameaças em `threat-library.md`.
 
 ### Proteger
 - Há **least-privilege** nas ferramentas e **aprovação humana** para ações sensíveis? (OWASP LLM06/ASI02/ASI03)
-- Inputs e fontes (RAG/contexto) são **sanitizados** contra **prompt injection** e **poisoning**? (LLM01/LLM04/ASI06)
+- Algum fluxo junta entrada não confiável, dado privado e saída para fora sem humano no meio
+  (Rule of Two)? E o que vem de fora pode virar memória sem o dono confirmar? (LLM01/ASI01/ASI06,
+  ver `prompt-injection.md` §1. Envenenamento de base de dados e RAG segue em LLM04)
 - A **saída do modelo** é validada antes de ser usada (evita XSS/exec)? (LLM05/ASI05)
 - Há **limite de consumo/custo** (rate limit, budget)? (LLM10)
 

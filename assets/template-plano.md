@@ -49,6 +49,34 @@ Para T1 normalmente risco mínimo/transparência — sinalize só o que aplica.]
 **Estruturais (planejar):**
 - [...]
 
+## 5b. Modo injeção (*só quando o modo injeção rodou*)
+**Mapa (Rule of Two por fluxo):**
+
+| Fluxo | [A] entrada de fora | [B] dado privado | [C] muda estado ou sai | Humano antes de C? | Veredito |
+|---|---|---|---|---|---|
+| | | | | | |
+
+**Camadas:**
+
+| Camada | Situação | Portão | Prova |
+|---|---|---|---|
+| C1 Regra escrita | | mole | |
+| C2 Aviso do runtime (P13) | | reforço | |
+| C3 Ação e memória | | duro | |
+
+**Teste plantado (`scripts/injecao_plantada.py`):**
+
+| Caso | Antes | Depois | Observação |
+|---|---|---|---|
+| md-acao | | | |
+| email-memoria | | | |
+| html-exfil | | | |
+| codigo-commit | | | |
+| transcricao-desvio | | | |
+
+**Mudanças aplicadas:** [uma por linha, com o arquivo e o commit se o dono já fez, senão "pendente de commit"]
+**Risco aceito:** [o que ficou aberto, por quê e quem decidiu]
+
 ## 6. Memo à liderança (250–500 palavras) — *opcional*
 [Voz de negócio. Onde estamos fortes · onde estamos expostos · quem envolver · especialistas ·
 treinamentos · procedimentos de emergência · próximo passo sugerido.]
